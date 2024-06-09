@@ -5,6 +5,15 @@ import { navLinks } from "@/constants/constants";
 import ThemeToggle from "./ThemeToggle";
 import Search from "./Search";
 
+import {
+  SignInButton,
+  SignOutButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
+
 const Navbar = () => {
   return (
     <header className="sticky z-50 container">
@@ -17,7 +26,14 @@ const Navbar = () => {
         </div>
         <Search customStyle={"hidden md:block"} />
         <div>
-          Sign-up Sign-In
+          <SignedOut>
+            <SignInButton />
+            <SignUpButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+            {/* <SignOutButton /> */}
+          </SignedIn>
           <ThemeToggle />
         </div>
       </div>

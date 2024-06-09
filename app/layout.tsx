@@ -5,6 +5,10 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/context/theme-provider";
 
+import { ClerkProvider } from "@clerk/nextjs";
+
+import { dark } from "@clerk/themes";
+
 export const metadata: Metadata = {
   title: "TechNest",
   description:
@@ -29,17 +33,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} ${chakraPetch.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        variables: {
+          colorPrimary: "#50C878",
+        },
+      }}
+    >
+      <html lang="en">
+        <body className={`${poppins.variable} ${chakraPetch.variable}`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
