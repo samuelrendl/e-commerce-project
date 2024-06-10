@@ -13,10 +13,11 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
-    <header className="sticky z-50 container">
+    <header className="sticky z-50 container px-4">
       <div className="flex justify-between items-center my-5 gap-5">
         <div>
           <Link href="/" className="font-chakraPetch text-4xl">
@@ -25,20 +26,22 @@ const Navbar = () => {
           </Link>
         </div>
         <Search customStyle={"hidden md:block"} />
-        <div>
+        <div className="flex justify-center md:items-center">
           <SignedOut>
             <SignInButton />
             <SignUpButton />
           </SignedOut>
           <SignedIn>
             <UserButton />
-            {/* <SignOutButton /> */}
           </SignedIn>
           <ThemeToggle />
+          <div className="md:hidden flex items-center justify-center">
+            <MobileNav />
+          </div>
         </div>
       </div>
       <Search customStyle={"md:hidden mx-auto"} />
-      <nav className="flex gap-6 justify-center my-5">
+      <nav className="flex grow flex-wrap gap-8 justify-center my-5">
         {navLinks.map((link) => (
           <Link
             key={link.label}
