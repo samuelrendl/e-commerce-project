@@ -46,7 +46,7 @@ const Navbar = () => {
           <Link
             key={link.label}
             href={link.href}
-            className="link-dark transition-transform transform hover:scale-110 hover:underline"
+            className="link-neutral600_dark200 transition-transform transform hover:scale-110 hover:underline"
           >
             {link.label}
           </Link>
