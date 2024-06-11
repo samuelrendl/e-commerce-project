@@ -1,0 +1,82 @@
+/* Hide arrows by default */
+.slick-slider .slick-arrow {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show arrows on hover */
+.slick-slider:hover .slick-arrow {
+  opacity: 1;
+}
+
+/* Position arrows inside the container */
+.slick-prev,
+.slick-next {
+  z-index: 99;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+.slick-prev {
+  /* carousel.css */
+  .custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    cursor: pointer;
+  }
+
+  .custom-next {
+    right: 10px; /* Adjust as needed */
+  }
+
+  .custom-prev {
+    left: 10px; /* Adjust as needed */
+  }
+
+  /* Hide arrows by default */
+  .slick-slider .slick-arrow {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  /* Show arrows on hover */
+  .slick-slider:hover .slick-arrow {
+    opacity: 1;
+  }
+
+  /* Position dots inside the container */
+  .slick-dots {
+    bottom: 10px; /* Adjust this value as needed */
+  }
+
+  .slick-dots li button:before {
+    color: rgba(255, 255, 255, 0.75); /* Optional: Customize dot color */
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: white; /* Optional: Customize active dot color */
+  }
+
+  left: 10px; /* Adjust as needed */
+}
+
+.slick-next {
+  right: 10px; /* Adjust as needed */
+}
+
+/* Position dots inside the container */
+.slick-dots {
+  bottom: 10px; /* Adjust this value as needed */
+}
+
+.slick-dots li button:before {
+  color: rgba(255, 255, 255, 0.75); /* Optional: Customize dot color */
+}
+
+.slick-dots li.slick-active button:before {
+  color: white; /* Optional: Customize active dot color */
+}

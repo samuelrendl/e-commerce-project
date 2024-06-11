@@ -36,6 +36,6 @@ small {
   @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
 }
 
-.link-dark {
+.link-neutral600_dark200 {
   @apply text-neutral-600 dark:text-neutral-200 !important;
 }

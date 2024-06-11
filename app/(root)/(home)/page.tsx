@@ -1,7 +1,35 @@
+import CarouselBanner from "@/components/home/CarouselBanner";
 import React from "react";
 
+const bannerImages = [
+  {
+    _id: "1",
+    src: "/carouselImages/iphone.png",
+    alt: "iPhone",
+    href: "/",
+  },
+  {
+    _id: "2",
+    src: "/carouselImages/samsung.png",
+    alt: "Samsung",
+    href: "/",
+  },
+  {
+    _id: "3",
+    src: "/carouselImages/xiaomi.png",
+    alt: "Xiaomi",
+    href: "/",
+  },
+];
+
 const Home = () => {
-  return <main className="container px-4">Home</main>;
+  return (
+    <main className="container px-4">
+      
+        <CarouselBanner images={bannerImages} />
+      
+    </main>
+  );
 };
 
 export default Home;
