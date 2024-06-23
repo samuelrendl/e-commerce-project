@@ -32,7 +32,7 @@ const CarouselBanner = ({ images }: CarouselBannerProps) => {
   };
 
   return (
-    <div className="">
+    <div>
       <Slider {...settings}>
         {images.map((image) => (
           <Link key={image._id} href={image.href}>
@@ -41,9 +41,8 @@ const CarouselBanner = ({ images }: CarouselBannerProps) => {
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-3xl"
+                  fill
+                  className="rounded-3xl object-cover"
                 />
               </div>
             </AspectRatio>

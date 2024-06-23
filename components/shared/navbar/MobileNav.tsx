@@ -20,7 +20,7 @@ const MobileNav = () => {
       <SheetTrigger>
         <Bars3Icon className="size-6" />
       </SheetTrigger>
-      <SheetContent className="bg-white">
+      <SheetContent className="bg-white dark:bg-dark-200 border-none">
         <nav className="flex flex-col grow gap-8 justify-center text-3xl mt-5">
           {navLinks.map((link) => (
             <Link

@@ -1,4 +1,5 @@
 import CarouselBanner from "@/components/home/CarouselBanner";
+import ProductsGrid from "@/components/shared/ProductsGrid";
 import React from "react";
 
 const bannerImages = [
@@ -25,9 +26,8 @@ const bannerImages = [
 const Home = () => {
   return (
     <main className="container px-4">
-      
-        <CarouselBanner images={bannerImages} />
-      
+      <CarouselBanner images={bannerImages} />
+      <ProductsGrid />
     </main>
   );
 };

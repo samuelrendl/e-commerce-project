@@ -5,11 +5,10 @@ import { Button } from "@/components/ui/button";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 interface SearchProps {
-    customStyle?: String;
-    
+  customStyle?: String;
 }
 
-const Search = ({customStyle}: SearchProps) => {
+const Search = ({ customStyle }: SearchProps) => {
   return (
     <div className={`w-full max-w-[400px] ${customStyle}`}>
       <div className="flex border-solid border rounded-full">
@@ -18,7 +17,7 @@ const Search = ({customStyle}: SearchProps) => {
           placeholder="Search"
           className="border-none shadow-none no-focus"
         />
-        <Button variant={'ghost'} className="rounded-full">
+        <Button variant={"ghost"} className="rounded-full hover:bg-transparent">
           <MagnifyingGlassIcon className="size-5" />
         </Button>
       </div>
