@@ -19,7 +19,7 @@ export interface IUser extends Document {
   lastLogin?: Date;
 }
 
-// Sample Mongoose Schema
+
 const UserSchema = new Schema(
   {
     clerkId: { type: String, required: true, unique: true },
