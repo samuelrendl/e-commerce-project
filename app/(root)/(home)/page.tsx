@@ -26,7 +26,9 @@ const bannerImages = [
 const Home = () => {
   return (
     <main className="container px-4">
-      <CarouselBanner images={bannerImages} />
+      <div className="my-5">
+        <CarouselBanner images={bannerImages} />
+      </div>
       <ProductsGrid />
     </main>
   );

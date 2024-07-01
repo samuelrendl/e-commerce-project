@@ -32,7 +32,7 @@ const CarouselBanner = ({ images }: CarouselBannerProps) => {
   };
 
   return (
-    <div>
+    <>
       <Slider {...settings}>
         {images.map((image) => (
           <Link key={image._id} href={image.href}>
@@ -49,7 +49,7 @@ const CarouselBanner = ({ images }: CarouselBannerProps) => {
           </Link>
         ))}
       </Slider>
-    </div>
+    </>
   );
 };
 

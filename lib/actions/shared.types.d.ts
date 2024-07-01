@@ -31,3 +31,7 @@ export interface GetProductsParams {
   category?: string;
   filter?: string;
 }
+
+export interface GetProductByIdParams {
+  productId: string;
+}

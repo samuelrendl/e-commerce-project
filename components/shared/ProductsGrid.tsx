@@ -18,6 +18,7 @@ const ProductsGrid = async () => {
             rating={product.rating}
             stock={product.stock}
             image={product.imageUrls[0]}
+            category={product.category}
           />
         ))}
       </div>
