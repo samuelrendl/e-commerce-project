@@ -3,17 +3,32 @@
 import Product from "@/database/product.model";
 
 import { connectToDatabase } from "../mongoose";
-import { GetProductsParams } from "./shared.types";
+import { GetProductsParams, GetProductByIdParams } from "./shared.types";
 
 export async function getAllProducts(params: GetProductsParams) {
-    try {
-        connectToDatabase();
+  try {
+    await connectToDatabase();
 
-        const products = await Product.find({});
+    const products = await Product.find({});
 
-        return products;
-    } catch (error) {
-        console.log(error);
-        throw error;
-    }
+    return products;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export async function getProductById(params: GetProductByIdParams) {
+  try {
+    await connectToDatabase();
+
+    const { productId } = params;
+
+    const product = await Product.findById(productId);
+
+    return product;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 }
