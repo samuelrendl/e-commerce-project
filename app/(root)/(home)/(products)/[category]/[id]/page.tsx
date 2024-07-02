@@ -5,7 +5,7 @@ import { getStockLevel } from "@/lib/utils";
 import parse from "html-react-parser";
 
 const Page = async ({ params }: any) => {
-  const result = await getProductById({ productId: params.id });
+  const result = await getProductById({ productId: params.id});
 
   return (
     <section className="container px-4">
