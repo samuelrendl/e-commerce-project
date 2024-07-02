@@ -1,32 +1,36 @@
 "use client";
 
-import ProductCard from "@/components/shared/ProductCard";
-import { getProductByCategory } from "@/lib/actions/product.action";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ProductCard, { ProductCardProps } from "@/components/shared/ProductCard";
+import { fetchProductsByCategory } from "@/lib/dataFetching";
 import { usePathname } from "next/navigation";
 
-const CategoryPage = async () => {
+const CategoryPage = () => {
+  const [products, setProducts] = useState<ProductCardProps[]>([]);
   const pathname = usePathname();
-  const categoryResult = pathname.split("/")[1].toString();
-  console.log(categoryResult);
 
-  const result = await getProductByCategory({
-    category: categoryResult,
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      const categoryResult = pathname.split("/")[1].toString();
+      const result = await fetchProductsByCategory(categoryResult);
+      setProducts(result);
+    };
 
-  console.log(result);
+    fetchData();
+  }, [pathname]);
+
   return (
-    <section className=" container px-4">
+    <section className="container px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {result.map((product) => (
+        {products.map((product, index) => (
           <ProductCard
-            key={product._id}
+            key={index}
             _id={product._id}
             name={product.name}
             price={product.price}
             rating={product.rating}
             stock={product.stock}
-            image={product.imageUrls[0]}
+            image={product.image}
             category={product.category}
           />
         ))}

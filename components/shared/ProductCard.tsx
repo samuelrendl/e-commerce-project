@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -45,7 +46,9 @@ const ProductCard = ({
           <StarIcon className="h-4 w-4" />
           {rating} / 5
         </small> */}
-        <p className={stock === 0 ? "text-red-600" : ""}>{getStockLevel(stock)}</p>
+        <p className={stock === 0 ? "text-red-600" : ""}>
+          {getStockLevel(stock)}
+        </p>
         <div className="flex flex-row justify-between items-center flex-wrap">
           <p>${price}</p>
           <AddToCartButton stock={stock} />
@@ -56,3 +59,4 @@ const ProductCard = ({
 };
 
 export default ProductCard;
+export type { ProductCardProps };
