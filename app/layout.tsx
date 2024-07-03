@@ -40,7 +40,7 @@ export default function RootLayout({
         },
       }}
     >
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning={true}>
         <body className={`${poppins.variable} ${chakraPetch.variable}`}>
           <ThemeProvider
             attribute="class"
