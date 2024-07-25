@@ -27,7 +27,7 @@ const ProductImages = ({ images, alt }: ProductImagesProps) => {
   return (
     <div className="my-8 max-w-64 md:max-w-96">
       <Slider {...settings}>
-        {images.map((image, index: any) => (
+        {images.map((image, index: number) => (
           <div key={index}>
             <Image
               src={image}

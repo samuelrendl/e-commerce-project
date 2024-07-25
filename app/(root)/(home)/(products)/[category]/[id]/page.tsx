@@ -4,8 +4,14 @@ import { getProductById } from "@/lib/actions/product.action";
 import { getStockLevel } from "@/lib/utils";
 import parse from "html-react-parser";
 
-const Page = async ({ params }: any) => {
-  const result = await getProductById({ productId: params.id});
+interface ProductPageProps {
+  params: {
+    id: string;
+  };
+}
+
+const Page = async ({ params }: ProductPageProps) => {
+  const result = await getProductById({ productId: params.id });
 
   return (
     <section className="container px-4">
@@ -16,7 +22,9 @@ const Page = async ({ params }: any) => {
         <div className="flex flex-col gap-4 flex-1">
           <h3 className="font-bold">{result.name}</h3>
           <p className="text-2xl">${result.price}</p>
-          <p className={`${result.stock === 0 ? "text-red-600" : ""} text-gray-600 dark:text-neutral-300`}>
+          <p
+            className={`${result.stock === 0 ? "text-red-600" : ""} text-gray-600 dark:text-neutral-300`}
+          >
             {getStockLevel(result.stock)}
           </p>
           <AddToCartButton stock={result.stock} extraStyling="md:max-w-52" />

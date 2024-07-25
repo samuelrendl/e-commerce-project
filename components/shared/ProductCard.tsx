@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -51,7 +50,19 @@ const ProductCard = ({
         </p>
         <div className="flex flex-row justify-between items-center flex-wrap">
           <p>${price}</p>
-          <AddToCartButton stock={stock} />
+          <AddToCartButton
+            stock={stock}
+            handleClick={{
+              _id,
+              name,
+              image,
+              price,
+              rating,
+              stock,
+              category,
+              imageUrls: [image],
+            }}
+          />
         </div>
       </div>
     </div>

@@ -1,19 +1,20 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import ProductCard, { ProductCardProps } from "@/components/shared/ProductCard";
+import ProductCard from "@/components/shared/ProductCard";
+import { Product } from "@/types/index";
 import { fetchProductsByCategory } from "@/lib/dataFetching";
 import { usePathname } from "next/navigation";
 
 const CategoryPage = () => {
-  const [products, setProducts] = useState<ProductCardProps[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const pathname = usePathname();
 
   useEffect(() => {
     const fetchData = async () => {
       const categoryResult = pathname.split("/")[1].toString();
       const result = await fetchProductsByCategory(categoryResult);
-      setProducts(result);
+      setProducts(result.map((product) => ({ ...product, imageUrls: [] })));
     };
 
     fetchData();

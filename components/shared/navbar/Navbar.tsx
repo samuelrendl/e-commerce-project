@@ -14,6 +14,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import MobileNav from "./MobileNav";
+import Cart from "./cart/Cart";
 
 const Navbar = () => {
   return (
@@ -26,15 +27,16 @@ const Navbar = () => {
           </Link>
         </div>
         <Search customStyle={"hidden md:block"} />
-        <div className="flex justify-center md:items-center">
+        <div className="flex justify-center md:items-center gap-1 md:gap-3">
           <SignedOut>
             <SignInButton />
             <SignUpButton />
           </SignedOut>
+
           <SignedIn>
             <UserButton />
           </SignedIn>
-          <ThemeToggle />
+          <Cart />
           <div className="md:hidden flex items-center justify-center">
             <MobileNav />
           </div>
